@@ -22,10 +22,9 @@ COPY . .
 # Add Go's bin directory to PATH (in case it's needed for local binaries)
 ENV PATH=$PATH:/go/bin
 
-WORKDIR /todo-app/app
 
 # Expose port 8080
 EXPOSE 8080
 
 # Run the app using 'gin'
-CMD ["go", "run", "."]
+CMD ["gin", "--port", "3000", "--appPort", "8080", "--path", "./app", "--build", "./app", "--immediate", "run", "."]
