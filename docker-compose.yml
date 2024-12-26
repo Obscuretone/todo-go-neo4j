@@ -18,6 +18,7 @@ services:
     container_name: go-task-app
     ports:
       - "8080:8080" # Exposing port for the Go app
+      - "3000:3000" # gin port
     environment:
       - NEO4J_URL=neo4j://neo4j:7687
       - NEO4J_USERNAME=neo4j
